@@ -27,9 +27,16 @@ namespace LightMisBank
         {
             InitializeComponent();
             _context = context;
-            ExpanderMenu.Visibility = itemMenu.SubItems == null ? Visibility.Collapsed : Visibility.Visible;
-            ListViewItemMenu.Visibility = itemMenu.SubItems == null ? Visibility.Visible : Visibility.Collapsed;
-
+            if (itemMenu.SubItems == null)
+            {
+                ExpanderMenu.Visibility = Visibility.Collapsed;
+                ListViewItemMenu.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                ExpanderMenu.Visibility = Visibility.Visible;
+                ListViewItemMenu.Visibility = Visibility.Collapsed;
+            }
             this.DataContext = itemMenu;
         }
 

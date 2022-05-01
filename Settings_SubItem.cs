@@ -9,12 +9,21 @@ namespace Settings.ViewModel
 {
     public class Settings_SubItem
     {
-        public Settings_SubItem(string name, UserControl screen = null)
+        public Settings_SubItem(string name)
         {
             Name = name;
-            Screen = screen;
+            UserControl Screen = new UserControl();
+            Screen.Name = Name;
         }
-        public string Name { get; private set; }
-        public UserControl Screen { get; private set; }
+        public string Name
+        { 
+            get; 
+            private set;
+        }
+        public UserControl Screen
+        { 
+            get;
+            private set; 
+        }
     }
 }

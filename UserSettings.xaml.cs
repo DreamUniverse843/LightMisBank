@@ -27,29 +27,29 @@ namespace LightMisBank
         {
             InitializeComponent();
 
-            var menuRegister = new List<Settings_SubItem>();
-            menuRegister.Add(new Settings_SubItem("系统"));
-            menuRegister.Add(new Settings_SubItem("学科"));
-            menuRegister.Add(new Settings_SubItem("题库"));
-            var item1 = new Settings_ItemMenu("基本", menuRegister, PackIconKind.Register);
+            var menuGeneral = new List<Settings_SubItem>();
+            menuGeneral.Add(new Settings_SubItem("系统"));
+            menuGeneral.Add(new Settings_SubItem("学科"));
+            menuGeneral.Add(new Settings_SubItem("题库"));
+            var item1 = new Settings_ItemMenu("基本", menuGeneral, PackIconKind.Register);
 
-            var menuSchedule = new List<Settings_SubItem>();
-            menuSchedule.Add(new Settings_SubItem("数据库"));
-            menuSchedule.Add(new Settings_SubItem("运行时"));
-            menuSchedule.Add(new Settings_SubItem("依赖库"));
-            var item2 = new Settings_ItemMenu("环境", menuSchedule, PackIconKind.Schedule);
+            var menuEnvironment = new List<Settings_SubItem>();
+            menuEnvironment.Add(new Settings_SubItem("数据库"));
+            menuEnvironment.Add(new Settings_SubItem("运行时"));
+            menuEnvironment.Add(new Settings_SubItem("依赖库"));
+            var item2 = new Settings_ItemMenu("环境", menuEnvironment, PackIconKind.Schedule);
 
-            var menuReports = new List<Settings_SubItem>();
-            menuReports.Add(new Settings_SubItem("开发信息"));
-            menuReports.Add(new Settings_SubItem("依赖组件"));
-            menuReports.Add(new Settings_SubItem("版本信息"));
-            var item3 = new Settings_ItemMenu("关于", menuReports, PackIconKind.FileReport);
+            var menuAbout = new List<Settings_SubItem>();
+            menuAbout.Add(new Settings_SubItem("开发信息"));
+            menuAbout.Add(new Settings_SubItem("依赖组件"));
+            menuAbout.Add(new Settings_SubItem("版本信息"));
+            var item3 = new Settings_ItemMenu("关于", menuAbout, PackIconKind.FileReport);
 
-            var menuExpenses = new List<Settings_SubItem>();
-            menuExpenses.Add(new Settings_SubItem("技术支持"));
-            menuExpenses.Add(new Settings_SubItem("推动开发"));
-            menuExpenses.Add(new Settings_SubItem("为我捐赠"));
-            var item4 = new Settings_ItemMenu("支持", menuExpenses, PackIconKind.ShoppingBasket);
+            var menuSupport = new List<Settings_SubItem>();
+            menuSupport.Add(new Settings_SubItem("技术支持"));
+            menuSupport.Add(new Settings_SubItem("推动开发"));
+            menuSupport.Add(new Settings_SubItem("为我捐赠"));
+            var item4 = new Settings_ItemMenu("支持", menuSupport, PackIconKind.ShoppingBasket);
 
             Menu.Children.Add(new UserSettingsSubItem(item1, this));
             Menu.Children.Add(new UserSettingsSubItem(item2, this));

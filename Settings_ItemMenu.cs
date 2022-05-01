@@ -18,9 +18,25 @@ namespace Settings.MenuItem
             Icon = icon;
         }
 
-        public string Header { get; private set; }
-        public PackIconKind Icon { get; private set; }
-        public List<Settings_SubItem> SubItems { get; private set; }
-        public UserControl Screen { get; private set; }
+        public string Header
+        { 
+            get; 
+            private set; 
+        }
+        public PackIconKind Icon
+        {
+            get; 
+            private set; 
+        }
+        public List<Settings_SubItem> SubItems 
+        { 
+            get; 
+            private set; 
+        }
+        public UserControl Screen 
+        { 
+            get; 
+            private set; 
+        }
     }
 }
