@@ -1,5 +1,5 @@
-/bin/
-/database/
-/sql/
-/obj/
-/.vs/
+bin
+database
+sql
+obj
+.vs
