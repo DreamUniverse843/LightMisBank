@@ -25,8 +25,8 @@
         </materialDesign:ColorZone>
         <Canvas>
             <TextBox x:Name="userNameInput" Grid.Column="1" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="166" TextChanged="TextBox_TextChanged" Height="31" FontStyle="Normal" TextDecorations="{x:Null}" TextAlignment="Left" FontStretch="Normal" FontSize="20" FontWeight="Normal" Canvas.Left="478" Canvas.Top="130"/>
-            <PasswordBox x:Name="userPasswordInput" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="166" Height="31" Canvas.Left="478" Canvas.Top="212"/>
-            <Button x:Name="userLoginButton" Grid.Column="1" Content="登录" HorizontalAlignment="Left" VerticalAlignment="Top" Height="36" Width="67" Click="userLoginButton_Click" Canvas.Left="456" Canvas.Top="287"/>
+            <PasswordBox x:Name="userPasswordInput" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="166" Height="31" Canvas.Left="478" Canvas.Top="212" Cursor="Arrow"/>
+            <Button x:Name="userLoginButton" Grid.Column="1" Content="登录" HorizontalAlignment="Left" VerticalAlignment="Top" Height="36" Width="67" Click="userLoginButton_Click" Canvas.Left="456" Canvas.Top="287" Cursor="Hand"/>
             <Button x:Name="userRegisterButton" Grid.Column="1" Content="注册" HorizontalAlignment="Left" VerticalAlignment="Center" Height="36" Width="67" Click="userRegisterButton_Click" Canvas.Left="577" Canvas.Top="287"/>
             <Label x:Name="UsernameNoNullLabel" Grid.Column="1" Content="用户名不能为空！" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="103" Visibility="Visible" Canvas.Left="652" Canvas.Top="133"/>
             <Label x:Name="userLoginLabel_Username" Grid.Column="1" Content="用户名" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="428" Canvas.Top="133"/>

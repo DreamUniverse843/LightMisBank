@@ -84,3 +84,7 @@ E:\Dev\LightMisBank\obj\Debug\net6.0-windows\refint\LightMisBank.dll
 E:\Dev\LightMisBank\obj\Debug\net6.0-windows\LightMisBank.pdb
 E:\Dev\LightMisBank\obj\Debug\net6.0-windows\LightMisBank.genruntimeconfig.cache
 E:\Dev\LightMisBank\obj\Debug\net6.0-windows\ref\LightMisBank.dll
+E:\Dev\LightMisBank\obj\Debug\net6.0-windows\UserRegister.baml
+E:\Dev\LightMisBank\obj\Debug\net6.0-windows\UserRegister.g.cs
+E:\Dev\LightMisBank\obj\Debug\net6.0-windows\LightMisBank.Properties.Resources.resources
+E:\Dev\LightMisBank\obj\Debug\net6.0-windows\LightMisBank.csproj.GenerateResource.cache

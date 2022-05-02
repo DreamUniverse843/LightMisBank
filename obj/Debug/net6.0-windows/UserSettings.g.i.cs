@@ -119,7 +119,7 @@ namespace LightMisBank {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/LightMisBank;V1.0.0.0;component/usersettings.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/LightMisBank;component/usersettings.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\UserSettings.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

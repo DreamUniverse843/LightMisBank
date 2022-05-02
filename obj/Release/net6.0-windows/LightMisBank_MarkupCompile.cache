@@ -10,11 +10,11 @@ none
 false
 TRACE;RELEASE;NET;NET6_0;NETCOREAPP
 E:\Dev\LightMisBank\App.xaml
-3-407052031
+461255209
 
-8-1327029848
+13949415330
 201-2115480113
-MainWindow.xaml;UserSettings.xaml;UserSettingsSubItem.xaml;
+MainWindow.xaml;UserRegister.xaml;UserSettings.xaml;UserSettingsSubItem.xaml;
 
-True
+False
 

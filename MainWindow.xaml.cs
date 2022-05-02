@@ -99,24 +99,36 @@ namespace BroadcastEvents
         }
         public void DoUserLogin(string username, string passwd)//用户登录传入操作的处理方法，请求交给数据库获取用户信息
         {
-            MessageBoxResult result = MessageBox.Show("input username is " + username + "\n password is " + passwd,"Info",MessageBoxButton.OKCancel);//调试用，获取用户名密码信息
+            MessageBoxResult result = MessageBox.Show("正在尝试登录操作。\nInput username is " + username + "\nPassword is " + passwd,"Info",MessageBoxButton.OKCancel);//调试用，获取用户名密码信息
             SQLiteConnection sql = new SQLiteConnection(SQLPath);//实例化数据库连接器，SQLPath 在 Config.cs 里
-            sql.Open();//连接数据库
-            SQLiteCommand LoginQueryCommand = sql.CreateCommand();//实例化数据库查询命令
-            LoginQueryCommand.CommandText = new string("SELECT * FROM 'main'.'Users' WHERE Username='"+username+"' and Password='"+passwd+"';");//查询对应的用户名密码组合是否存在
-
-            if (0 == Convert.ToInt32(LoginQueryCommand.ExecuteScalar()))//取返回值首列，如非零则存在，反之不存在。
+            try
             {
-                //table - 表返回不存在
-                MessageBox.Show("input username " + username + " don't exist.", "Info", MessageBoxButton.OK);
+                sql.Open();//连接数据库
+                SQLiteCommand LoginQueryCommand = sql.CreateCommand();//实例化数据库查询命令
+                LoginQueryCommand.CommandText = new string("SELECT * FROM 'main'.'Users' WHERE Username='" + username + "' and Password='" + passwd + "';");//查询对应的用户名密码组合是否存在
+
+                if (0 == Convert.ToInt32(LoginQueryCommand.ExecuteScalar()))//取返回值首列，如非零则存在，反之不存在。
+                {
+                    //table - 表返回不存在
+                    MessageBox.Show("input username " + username + " don't exist.", "Info", MessageBoxButton.OK);
+
+                }
+                else
+                {
+                    //table - 表返回存在
+                    MessageBox.Show("input username " + username + " exist.", "Info", MessageBoxButton.OK);
+                }
 
             }
-            else
+            catch (Exception e)//数据库出现问题时
             {
-                //table - 表返回存在
-                MessageBox.Show("input username " + username + " exist.", "Info", MessageBoxButton.OK);
+                if(e.HResult==-2147481601)//当数据库文件不存在时
+                {
+                    MessageBox.Show("无法打开数据库文件。请检查数据库文件是否在系统设置指定之处。\n以下是详细信息：\n" + e.ToString(), "Error", MessageBoxButton.OK);
+                }
+                
             }
-
+            
         }
         public void DoVerifyUserExist(string username)//验证用户名是否存在（用于注册时验证)
         {
@@ -142,6 +154,19 @@ public partial class MainWindow : Window
         public MainWindow()
         {
             InitializeComponent();
+            try//启动时即检测数据库
+            {
+                SQLiteConnection sql = new SQLiteConnection(Config.SQLPath);//实例化数据库连接器，SQLPath 在 Config.cs 里
+                sql.Open();
+                sql.Close();
+            }
+            catch (Exception e)
+            {
+                if (e.HResult == -2147481601)//当数据库文件不存在时
+                {
+                    MessageBox.Show("未检测到先前设置的数据库文件。请检查数据库文件是否在系统设置指定之处。\n如继续，应用程序可能出现错误。", "Error", MessageBoxButton.OK);
+                }
+            }
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -178,21 +203,8 @@ public partial class MainWindow : Window
         }
         private void userRegisterButton_Click(object sender, RoutedEventArgs e)//注册按钮的操作事件
         {
-            if (userNameInput.Text == String.Empty)
-            {
-                UsernameNoNullLabel.Visibility = Visibility.Collapsed;
-                MessageBoxResult result = MessageBox.Show("用户名不能为空。", "提示", MessageBoxButton.OK);
-            }
-            else if (userPasswordInput.Password == String.Empty)
-            {
-                UsernameNoNullLabel.Visibility = Visibility.Collapsed;
-                MessageBoxResult result = MessageBox.Show("密码不能为空。", "提示", MessageBoxButton.OK);
-            }
-            else
-            {
-                
-            }
-            
+            UserRegister register = new UserRegister();
+            register.ShowDialog();
         }
         private void SystemSettingsButton_Click(object sender, RoutedEventArgs e)//设置按钮的操作事件
         {

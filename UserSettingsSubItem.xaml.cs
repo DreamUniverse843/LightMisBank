@@ -44,5 +44,9 @@ namespace LightMisBank
         {
             _context.SwitchScreen(((Settings_SubItem)((ListView)sender).SelectedItem).Screen);
         }
+        private void OnSystemItem_MouseLeftButtonDown(object sender,MouseButtonEventArgs e)
+        {
+            MessageBox.Show("SystemItem CLicked", "Info", MessageBoxButton.OK);
+        }
     }
 }

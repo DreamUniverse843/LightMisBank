@@ -28,27 +28,27 @@ namespace LightMisBank
             InitializeComponent();
 
             var menuGeneral = new List<Settings_SubItem>();
-            menuGeneral.Add(new Settings_SubItem("系统"));
-            menuGeneral.Add(new Settings_SubItem("学科"));
-            menuGeneral.Add(new Settings_SubItem("题库"));
+            menuGeneral.Add(new Settings_SubItem("系统","OnSystemItemClicked"));
+            menuGeneral.Add(new Settings_SubItem("学科","OnSubjectItemClicked"));
+            menuGeneral.Add(new Settings_SubItem("题库","OnQuestionDatabaseItemClicked"));
             var item1 = new Settings_ItemMenu("基本", menuGeneral, PackIconKind.Register);
 
             var menuEnvironment = new List<Settings_SubItem>();
-            menuEnvironment.Add(new Settings_SubItem("数据库"));
-            menuEnvironment.Add(new Settings_SubItem("运行时"));
-            menuEnvironment.Add(new Settings_SubItem("依赖库"));
+            menuEnvironment.Add(new Settings_SubItem("数据库","OnDatabaceItemClicked"));
+            menuEnvironment.Add(new Settings_SubItem("运行时", "OnRuntimeItemClicked"));
+            menuEnvironment.Add(new Settings_SubItem("依赖库","OnDependentLibItemClicked"));
             var item2 = new Settings_ItemMenu("环境", menuEnvironment, PackIconKind.Schedule);
 
             var menuAbout = new List<Settings_SubItem>();
-            menuAbout.Add(new Settings_SubItem("开发信息"));
-            menuAbout.Add(new Settings_SubItem("依赖组件"));
-            menuAbout.Add(new Settings_SubItem("版本信息"));
+            menuAbout.Add(new Settings_SubItem("开发信息","OnDevelopmentItemClicked"));
+            menuAbout.Add(new Settings_SubItem("依赖组件","OnDevelopmentDependencyItemClicked"));
+            menuAbout.Add(new Settings_SubItem("版本信息","OnVersionItemClicked"));
             var item3 = new Settings_ItemMenu("关于", menuAbout, PackIconKind.FileReport);
 
             var menuSupport = new List<Settings_SubItem>();
-            menuSupport.Add(new Settings_SubItem("技术支持"));
-            menuSupport.Add(new Settings_SubItem("推动开发"));
-            menuSupport.Add(new Settings_SubItem("为我捐赠"));
+            menuSupport.Add(new Settings_SubItem("技术支持","OnTechnicalSupportItemClicked"));
+            menuSupport.Add(new Settings_SubItem("推动开发","OnKeepingDevelopmentItemClicked"));
+            menuSupport.Add(new Settings_SubItem("为我捐赠","OnSponsorItemClicked"));
             var item4 = new Settings_ItemMenu("支持", menuSupport, PackIconKind.ShoppingBasket);
 
             Menu.Children.Add(new UserSettingsSubItem(item1, this));
