@@ -43,10 +43,7 @@ namespace LightMisBank
         private void ListViewMenu_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             _context.SwitchScreen(((Settings_SubItem)((ListView)sender).SelectedItem).Screen);
-        }
-        private void OnSystemItem_MouseLeftButtonDown(object sender,MouseButtonEventArgs e)
-        {
-            MessageBox.Show("SystemItem CLicked", "Info", MessageBoxButton.OK);
+            MessageBox.Show("Selection Changed", "Info", MessageBoxButton.OK);
         }
     }
 }

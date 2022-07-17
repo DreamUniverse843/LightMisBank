@@ -47,7 +47,7 @@ namespace LightMisBank {
         /// InitializeComponent
         /// </summary>
         [System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "6.0.4.0")]
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "6.0.6.0")]
         public void InitializeComponent() {
             if (_contentLoaded) {
                 return;
@@ -59,7 +59,7 @@ namespace LightMisBank {
             
             #line default
             #line hidden
-            System.Uri resourceLocater = new System.Uri("/LightMisBank;component/app.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/LightMisBank;V1.0.0.0;component/app.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\App.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
@@ -73,7 +73,7 @@ namespace LightMisBank {
         /// </summary>
         [System.STAThreadAttribute()]
         [System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "6.0.4.0")]
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "6.0.6.0")]
         public static void Main() {
             LightMisBank.App app = new LightMisBank.App();
             app.InitializeComponent();

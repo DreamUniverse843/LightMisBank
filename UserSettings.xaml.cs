@@ -59,7 +59,7 @@ namespace LightMisBank
 
         internal void SwitchScreen(object sender)
         {
-            var screen = ((UserControl)sender);
+            var screen = (UserControl)sender;
 
             if (screen != null)
             {
